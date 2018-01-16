@@ -1,0 +1,16 @@
+#include "prodgenie_common_cosmic_uboone.fcl"
+
+process_name: GenieGenHarvard
+outputs.out1.fileName: "prodgenie_bnb_nu_cosmic_uboone_%tc_gen.root"
+
+physics.producers.generator: @local::microboone_genie_simple
+physics.producers.generator.GlobalTimeOffset: 3125.
+physics.producers.generator.RandomTimeOffset: 1600.
+physics.producers.generator.TopVolume: "volCryostat"
+physics.producers.generator.BeamName: "booster"
+
+physics.producers.generator.FluxSearchPaths: "/n/holylfs/LABS/guenette_lab/flux/"
+
+physics.producers.corsika.ShowerInputFiles: ["/n/holylfs/LABS/guenette_lab/corsika/sqShowers/p_showers_*.db", "/n/holylfs/LABS/guenette_lab/corsika/sqShowers/He_showers_*.db", "/n/holylfs/LABS/guenette_lab/corsika/sqShowers/N_showers_*.db", "/n/holylfs/LABS/guenette_lab/corsika/sqShowers/Mg_showers_*.db", "/n/holylfs/LABS/guenette_lab/corsika/sqShowers/Fe_showers_*.db"]
+
+
