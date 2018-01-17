@@ -1,0 +1,4 @@
+Time estimates for the fcl production, using 10 events, 4000MB of memory, etc.
+
+Genie generation + corsika: 64 seconds 
+
