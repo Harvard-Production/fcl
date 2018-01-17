@@ -17,3 +17,29 @@ Time: 610 seconds
 Output size: 509 Mb
 Total Geant time for 8M events: 4.88 B seconds (11.3 days on 500 cores)
 Total disk space for 8M events: 407.2 TB
+
+Detsim:
+fcl: standard_detsim_uboone.fcl
+Time: 674 seconds
+Output size: 919M (410 MB new)
+Total detsim time for 8M events: 
+Total disk space for 8M events:
+
+Reco1:
+fcl: reco_uboone_mcc8_driver_stage1_reduced.fcl
+Time: 198 seconds
+Output size: 427M
+
+
+Reco2:
+fcl: reco_uboone_mcc8_driver_stage2_reduced.fcl
+Time: 186 seconds
+Output size: 534M
+
+
+Summary:
+All in one processing (generation + larg4 + detsim + reco1 + reco2)
+Time for 10 events: 64 + 610 + 674 + 198 + 186: 1732 seconds (28.87 minutes)
+Output size for 10 events: 534MB
+Total time for 6.6e20 POT (800k events): 138M seconds ( 3.2 days on 500 cores)
+Total output size for 6.6e20POT (800k events): 43 TB
