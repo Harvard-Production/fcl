@@ -4,10 +4,16 @@ Number of events generated per 6.6e20 POT, full cryostat: approximately 800,000
 
 10x statistics: 8M events
 
-Genie generation + corsika: 64 seconds, 540Kb
+Genie generation + corsika:
+fcl:. prodgenie_bnb_nu_cosmic_uboone_harvard.fcl
+time: 64 seconds
+Output size: 540Kb
 Total GENIE generation time for 8M events: 512M seconds (1.2 days on 500 cores)
 Total disk space for 8M events: 432 Gb
 
-Geant Simulation: 610 seconds, 509 Mb
+Geant Simulation: 
+fcl: standard_g4_spacecharge_uboone.fcl
+Time: 610 seconds
+Output size: 509 Mb
 Total Geant time for 8M events: 4.88 B seconds (11.3 days on 500 cores)
 Total disk space for 8M events: 407.2 TB
