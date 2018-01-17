@@ -1,4 +1,13 @@
 Time estimates for the fcl production, using 10 events, 4000MB of memory, etc.
 
-Genie generation + corsika: 64 seconds 
+Number of events generated per 6.6e20 POT, full cryostat: approximately 800,000
 
+10x statistics: 8M events
+
+Genie generation + corsika: 64 seconds, 540Kb
+Total GENIE generation time for 8M events: 512M seconds (1.2 days on 500 cores)
+Total disk space for 8M events: 432 Gb
+
+Geant Simulation: 610 seconds, 509 Mb
+Total Geant time for 8M events: 4.88 B seconds (11.3 days on 500 cores)
+Total disk space for 8M events: 407.2 TB
