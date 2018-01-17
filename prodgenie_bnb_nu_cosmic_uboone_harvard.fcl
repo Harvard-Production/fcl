@@ -9,7 +9,7 @@ physics.producers.generator.RandomTimeOffset: 1600.
 physics.producers.generator.TopVolume: "volCryostat"
 physics.producers.generator.BeamName: "booster"
 
-physics.producers.generator.FluxSearchPaths: "/n/holylfs/LABS/guenette_lab/flux/"
+physics.producers.generator.FluxSearchPaths: "/n/holylfs/LABS/guenette_lab/data/flux/"
 
 physics.producers.corsika.ShowerInputFiles: ["/n/holylfs/LABS/guenette_lab/corsika/sqShowers/p_showers_*.db", "/n/holylfs/LABS/guenette_lab/corsika/sqShowers/He_showers_*.db", "/n/holylfs/LABS/guenette_lab/corsika/sqShowers/N_showers_*.db", "/n/holylfs/LABS/guenette_lab/corsika/sqShowers/Mg_showers_*.db", "/n/holylfs/LABS/guenette_lab/corsika/sqShowers/Fe_showers_*.db"]
 
