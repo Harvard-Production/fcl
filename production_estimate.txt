@@ -11,7 +11,7 @@ Output size: 540Kb
 Total GENIE generation time for 8M events: 512M seconds (1.2 days on 500 cores)
 Total disk space for 8M events: 432 Gb
 
-Geant Simulation: 
+Geant Simulation:
 fcl: standard_g4_spacecharge_uboone.fcl
 Time: 610 seconds
 Output size: 509 Mb
@@ -22,7 +22,7 @@ Detsim:
 fcl: standard_detsim_uboone.fcl
 Time: 674 seconds
 Output size: 919M (410 MB new)
-Total detsim time for 8M events: 
+Total detsim time for 8M events:
 Total disk space for 8M events:
 
 Reco1:

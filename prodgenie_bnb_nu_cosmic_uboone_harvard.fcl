@@ -9,8 +9,8 @@ physics.producers.generator.RandomTimeOffset: 1600.
 physics.producers.generator.TopVolume: "volCryostat"
 physics.producers.generator.BeamName: "booster"
 
-physics.producers.generator.FluxSearchPaths: "/n/holylfs/LABS/guenette_lab/data/flux/"
+physics.producers.generator.FluxSearchPaths: "/n/holylfs02/LABS/guenette_lab/data/flux/"
 
-physics.producers.corsika.ShowerInputFiles: ["/n/holylfs/LABS/guenette_lab/data/corsika/sqShowers/p_showers_*.db", "/n/holylfs/LABS/guenette_lab/data/corsika/sqShowers/He_showers_*.db", "/n/holylfs/LABS/guenette_lab/data/corsika/sqShowers/N_showers_*.db", "/n/holylfs/LABS/guenette_lab/data/corsika/sqShowers/Mg_showers_*.db", "/n/holylfs/LABS/guenette_lab/data/corsika/sqShowers/Fe_showers_*.db"]
+physics.producers.corsika.ShowerInputFiles: ["/n/holylfs02/LABS/guenette_lab/data/corsika/sqShowers/p_showers_*.db", "/n/holylfs02/LABS/guenette_lab/data/corsika/sqShowers/He_showers_*.db", "/n/holylfs02/LABS/guenette_lab/data/corsika/sqShowers/N_showers_*.db", "/n/holylfs02/LABS/guenette_lab/data/corsika/sqShowers/Mg_showers_*.db", "/n/holylfs02/LABS/guenette_lab/data/corsika/sqShowers/Fe_showers_*.db"]
 
 
