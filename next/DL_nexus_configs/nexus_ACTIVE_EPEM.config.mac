@@ -1,0 +1,29 @@
+
+### GEOMETRY (Xenon, Hydrogen, SeF6)
+
+/Geometry/NextNew/pressure 10.1 bar
+/Geometry/NextNew/elfield false
+
+/nexus/random_seed {random_seed}
+
+/Geometry/PmtR11410/SD_depth 4
+
+### GENERATOR
+/Generator/ElecPositronPair/min_energy 1.0 MeV
+/Generator/ElecPositronPair/max_energy 2.0 MeV
+/Generator/ElecPositronPair/region ACTIVE
+
+# PHYSICS
+/PhysicsList/Nexus/clustering          false
+/PhysicsList/Nexus/drift               false
+/PhysicsList/Nexus/electroluminescence false
+
+### VERBOSITIES
+/run/verbose 0
+/event/verbose 0
+/tracking/verbose 0
+
+### JOB CONTROL
+/nexus/persistency/outputFile nexus_ACTIVE_10bar_EPEM.next
+
+/nexus/persistency/start_id 0

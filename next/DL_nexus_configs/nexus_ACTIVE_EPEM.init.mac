@@ -1,0 +1,24 @@
+
+### --------------------------------------------------------
+###  Next: Initialization macro of nexus.
+### --------------------------------------------------------
+
+/PhysicsList/RegisterPhysics G4EmStandardPhysics_option4
+/PhysicsList/RegisterPhysics NexusPhysics
+/PhysicsList/RegisterPhysics G4StepLimiterPhysics
+/PhysicsList/RegisterPhysics G4DecayPhysics
+/PhysicsList/RegisterPhysics G4RadioactiveDecayPhysics
+
+### GEOMETRY
+/Geometry/RegisterGeometry NEXT_NEW
+
+### GENERATOR
+/Generator/RegisterGenerator E+E-PAIR
+
+/Actions/RegisterTrackingAction DEFAULT
+/Actions/RegisterEventAction DEFAULT
+/Actions/RegisterSteppingAction DEFAULT
+/Actions/RegisterRunAction DEFAULT
+
+### EXTRA CONFIGURATION
+/nexus/RegisterMacro nexus_ACTIVE_EPEM.init.mac
