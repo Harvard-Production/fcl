@@ -9,8 +9,6 @@
 #/nexus/random_seed {random_seed}
 /nexus/random_seed 0
 
-/Geometry/PmtR11410/SD_depth 4
-
 ### GENERATOR
 /Generator/ElecPositronPair/min_energy 1.0 MeV
 /Generator/ElecPositronPair/max_energy 2.0 MeV

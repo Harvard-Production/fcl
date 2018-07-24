@@ -19,4 +19,4 @@
 /PhysicsList/RegisterPhysics G4StepLimiterPhysics
 
 ### EXTRA CONFIGURATION
-/nexus/RegisterMacro nexus_ACTIVE_SINGLE_E.init.mac
+/nexus/RegisterMacro nexus_ACTIVE_SINGLE_E.config.mac
