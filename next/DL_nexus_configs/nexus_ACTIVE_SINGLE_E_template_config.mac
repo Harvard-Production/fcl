@@ -13,6 +13,7 @@
 ### GENERATOR
 /Generator/SingleParticle/min_energy 1.0 MeV
 /Generator/SingleParticle/max_energy 2.0 MeV
+/Generator/SingleParticle/particle e-
 /Generator/SingleParticle/region ACTIVE
 
 # PHYSICS

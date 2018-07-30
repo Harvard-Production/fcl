@@ -1,0 +1,136 @@
+
+#include "sensorproperties.fcl"
+#include "detectorproperties.fcl"
+#include "databaseutil.fcl"
+#include "S1simulation_NEW.fcl"
+#include "simulationproperties.fcl"
+
+BEGIN_PROLOG
+IDST: "nexus_ACTIVE_10bar_SINGLE_E.next"
+ODST: "nexus_ACTIVE_10bar_SINGLE_E_detsim.next"
+END_PROLOG
+
+process_name: CREATEMCRD
+
+services : {
+         ## Better to give filename on command line with -T option.
+         TFileService : { fileName : "elHistos.root"}
+         S1Simulation: @local::standard_S1simulation
+         SimulationProperties: @local::standard_simulationproperties
+         DetectorProperties: @local::standard_detectorproperties
+         SensorProperties: @local::standard_sensorproperties
+         DatabaseUtil: @local::standard_databaseutil
+}
+
+services.DetectorProperties.TablesVersion: "MC"
+services.SensorProperties.TablesVersion: "MC"
+
+
+source : {
+       module_type: GateInput
+       fileNames   : [ @local::IDST ]
+       run: 10000
+       startingSubRun: 0
+    #   max_events: 20
+       skipEvents: 0
+       hdf5: false
+}
+
+physics: {
+     prods : [createS1, createS2, digitizeNN]
+     end: [ dstbuilder]
+     trigger_paths : [prods]
+     filters : {
+         createS1 : {
+                module_type : S1SignalBuilder
+            errorOnFailureToPut: false
+                        waveformStudies : true
+                        pmtBinning : 1.
+            opticalFactor : 1
+                        tagGet : "gateinput"
+            tagPut : "s1hits"
+                        randomSeed : 35547
+               }
+           createS2 : {
+                module_type :   ELSignalBuilder
+            errorOnFailureToPut: false
+            tagGet : "gateinput"
+            elGain: 410
+            opticalFactor: 3.24
+                        transvDiff : 1.072
+                        longDiff : 0.267
+                        constantLifetime: false
+            nSiPMsperDB: 64
+            paramFilename: "$NEXTARTSRC/detsim/detsim/Utilities/NEW_S2parametrization_v0.root"
+            maxDistSiPMs: 30.0
+            cathodeParamSampling: 0.1
+            anodeParamSampling: 0.01
+            controlHistos: false
+            debug: true
+            waveformStudies : true
+            pmtBinning : 1.
+            outputInstancePMT: pmtELHits
+            outputInstanceSiPM: sipmELHits
+            randomSeed : 35548
+            paramVersion : 0
+            pmt_pitch_xy_ : 5.
+            pmt_pitch_t_  : 1.
+            sipm_pitch_xy_: 0.1
+            sipm_pitch_t_ : 100
+        }
+      }
+      producers : {
+                    digitizeNN : {
+              module_type : Digitizer
+              debugMode : false
+              fullSimulation : false
+              outputInstancePMT  : pmtDigitsNN
+              outputInstanceSiPM : sipmDigitsNN
+              eventDuration : 800.
+              samplingTimeCathode : 0.001
+              samplingTimeAnode : 1
+                          triggerIndexCathode: 100000.
+              triggerIndexAnode: 100.
+              calibrationConst : false
+              gainSigmaCathode : 0.0
+              gainSigmaAnode : 0.00
+              shapingVector : [1]
+                      siPMNoisePDF : false
+                          pedRMSCathode : 0.0
+                          pedRMSAnode : 0.0
+              pdfFileName : "$NEXTARTSRC/detsim/detsim/Utilities/sipmNoisePDFs_r3775.root"
+              fakeS1 : false
+                      randomSeed: 35549
+                      tags : {
+                               s2pmthit : "createS2:pmtELHits"
+                               s2sipmhit : "createS2:sipmELHits"
+                               s1hit : "createS1:s1hits"
+              }
+              errorOnFailureToPut: false
+                }
+        }
+        analyzers : {
+
+                dstbuilder : {
+                     module_type: DstArtBuilder
+                     OutputDSTFile: @local::ODST
+                     InputDSTFile: @local::IDST
+                     HDF5Dump: 1
+                     SaveHits: 1
+                     SaveWaveforms: 1
+                     SavePulses: 0
+                     SavePeakMaps: 0
+                     SaveClusters: 0
+                     SaveTracks: 0
+                     SaveMCSensHits: 1
+                     PMTSampWidth: 1
+                     tags : {
+                             pmtRawDigits : "digitizeNN:pmtDigitsNN"
+                             sipmRawDigits : "digitizeNN:sipmDigitsNN"
+                 s1mcshit: "createS1:s1hits"
+                 s2mcshit: "createS2:sipmELHits"
+            }
+                }
+    }
+}
+
