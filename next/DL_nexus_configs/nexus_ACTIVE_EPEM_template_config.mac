@@ -6,8 +6,8 @@
 /Geometry/NextNew/pressure 10.1 bar
 /Geometry/NextNew/elfield false
 
-#/nexus/random_seed {random_seed}
-/nexus/random_seed 0
+/nexus/random_seed {random_seed}
+#/nexus/random_seed 0
 
 ### GENERATOR
 /Generator/ElecPositronPair/min_energy 1.0 MeV
@@ -25,6 +25,6 @@
 /tracking/verbose 0
 
 ### JOB CONTROL
-/nexus/persistency/outputFile nexus_ACTIVE_10bar_EPEM.next
+/nexus/persistency/outputFile nexus_ACTIVE_10bar_EPEM_{file_index}.next
 
 /nexus/persistency/start_id 0

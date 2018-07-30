@@ -6,8 +6,8 @@
 /Geometry/NextNew/pressure 10.1 bar
 /Geometry/NextNew/elfield false
 
-# /nexus/random_seed {random_seed}
-/nexus/random_seed 0
+/nexus/random_seed {random_seed}
+# /nexus/random_seed 0
 
 
 ### GENERATOR
@@ -27,6 +27,6 @@
 /tracking/verbose 0
 
 ### JOB CONTROL
-/nexus/persistency/outputFile nexus_ACTIVE_10bar_SINGLE_E.next
+/nexus/persistency/outputFile nexus_ACTIVE_10bar_SINGLE_E_{file_index}.next
 
-/nexus/persistency/start_id 0
+/nexus/persistency/start_id 1000000
