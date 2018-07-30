@@ -21,4 +21,4 @@
 /Actions/RegisterRunAction DEFAULT
 
 ### EXTRA CONFIGURATION
-/nexus/RegisterMacro nexus_ACTIVE_EPEM.config.mac
+/nexus/RegisterMacro nexus_ACTIVE_EPEM_{file_index}.config.mac
