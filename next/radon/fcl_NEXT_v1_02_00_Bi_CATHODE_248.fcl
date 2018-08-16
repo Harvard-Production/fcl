@@ -4,7 +4,6 @@
 #include "databaseutil.fcl"
 #include "S1simulation_NEW.fcl"
 #include "simulationproperties.fcl"
-#include "messageService.fcl"
 
 
 BEGIN_PROLOG
@@ -30,8 +29,8 @@ services : {
 services.SensorProperties.TablesVersion: "MC"
 services.DetectorProperties.TablesVersion: "MC"
 
-services.message: @local::mf_production
-services.message.destinations.log.filename: "error.log"
+#services.message: @local::mf_production
+#services.message.destinations.log.filename: "error.log"
 
 source : {
        module_type: GateInput
