@@ -4,7 +4,6 @@
 #include "databaseutil.fcl"
 #include "S1simulation_NEW.fcl"
 #include "simulationproperties.fcl"
-#include "messageService.fcl"
 
 
 BEGIN_PROLOG
@@ -14,7 +13,7 @@ END_PROLOG
 
 process_name: rawMC
 
-### 
+###
 
 services : {
 	 ## Better to give filename on command line with -T option.
@@ -29,9 +28,6 @@ services : {
 
 services.SensorProperties.TablesVersion: "MC"
 services.DetectorProperties.TablesVersion: "MC"
-
-services.message: @local::mf_production
-services.message.destinations.log.filename: "error.log"
 
 source : {
        module_type: GateInput
@@ -54,7 +50,7 @@ physics: {
 			#binSizeCathode : 100
                         waveformStudies : true
                         pmtBinning : 1.
-                        tagGet : "gateinput" 
+                        tagGet : "gateinput"
 			tagPut : "s1hits"
                         randomSeed : 214549
                }
@@ -97,7 +93,7 @@ physics: {
                           triggerIndexCathode: 100000.
 			  triggerIndexAnode: 100.
 			  calibrationConst : false
-			  gainSigmaCathode : 0.0 
+			  gainSigmaCathode : 0.0
 			  gainSigmaAnode : 0.01
 			  shapingVector : [1]
 	                  siPMNoisePDF : false
@@ -111,16 +107,16 @@ physics: {
                                s2sipmhit : "createS2:sipmELHits"
                                s1hit : "createS1:s1hits"
 			  }
-			  errorOnFailureToPut: false	
+			  errorOnFailureToPut: false
                 }
         }
         analyzers : {
-	
+
                 dstbuilder : {
-                     module_type: DstArtBuilder 
+                     module_type: DstArtBuilder
                      OutputDSTFile: @local::ODST
                      InputDSTFile: @local::IDST
-                     HDF5Dump: 1       
+                     HDF5Dump: 1
                      SaveHits: 1
                      SaveWaveforms: 1
                      SavePulses: 0
